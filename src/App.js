@@ -3,7 +3,7 @@ import React from 'react';
 import Navbar from './Components/Navbar';
 import SignIn from './Pages/login';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Jobs from './Pages/jobs';
+import Jobs from './Pages/Jobs';
 import VideoCall from './Pages/VideoCall';
 import Homepage from './Pages/Home';
 
