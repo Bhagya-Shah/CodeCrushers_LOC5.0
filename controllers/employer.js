@@ -5,6 +5,7 @@ const {StatusCodes,ReasonPhrases} = require('http-status-codes')
 const {body,validationResult} =require('express-validator')
 const Employer = require('../models/Employer')
 const Company = require('../models/Company')
+const Job = require('../models/Job')
 
 
 // first time info
@@ -22,7 +23,16 @@ const basicEmployerInfo = async(req,res)=>{
 
 // posting jobs
 const jobPosting = async(req,res)=>{
-    
+    const userId = req.user.id
+    const empr = await Employer.findOne({_id:userId})
+    if(!empr){
+        return res.status(StatusCodes.BAD_REQUEST).json({msg:'Only an employer can post a job opening'})
+    }
+    const {company,category,domain,desc,location,salary}= req.body
+    if(empr.company!=company){
+        return res.status(StatusCodes.BAD_REQUEST).json({msg:$`Only an employer of ${company} can post jobs for it`})
+    }
+    const job = await Job.create({employerId:userId,company,category,domain,desc,location,salary}) 
 }
 
 
