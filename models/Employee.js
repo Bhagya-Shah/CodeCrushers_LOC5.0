@@ -6,7 +6,8 @@ const employeeSchema = new mongoose.Schema({
     userId:{
         type:mongoose.Types.ObjectId,
         ref:User,
-        required:[true,'User should be associated with an employee']
+        unique:true,
+        required:[true,'Employee should be associated with an User']
     },
     experience:{
         type:Number,

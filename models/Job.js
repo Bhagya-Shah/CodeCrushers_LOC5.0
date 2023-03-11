@@ -11,7 +11,7 @@ const jobSchema = new mongoose.Schema({
         required:true
     },
     category:{
-        tyep:String
+        type:String
     },
     domain:{
         type:String,
@@ -29,7 +29,8 @@ const jobSchema = new mongoose.Schema({
         type:Number
     },
     posted:{
-
+        type:Date,
+        default:Date.now
     }
 })
 

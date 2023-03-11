@@ -6,7 +6,8 @@ const employerSchema = new mongoose.Schema({
     userId:{
         type:mongoose.Types.ObjectId,
         ref:User,
-        required:[true,'User should be associated with an employer']
+        unique:true,
+        required:[true,'Employer should be associated with an User']
     },
     company:{
         type:String,

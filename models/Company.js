@@ -45,14 +45,16 @@ const companySchema = new mongoose.Schema({
         type:String,
         required:true
     },
+    companyMail:{
+        type:String,
+        required:true
+    },
     numEmployees:{
         type:Number,
-        required:true,
         default:0
     },
     numFollowers:{
         type:Number,
-        required:true,
         default:0
     },
     reviews:[reviewSchema]

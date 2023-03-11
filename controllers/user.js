@@ -49,10 +49,10 @@ const createUser = async(req,res)=>{
         const salt =await bcrypt.genSalt();
         const hashedPass = await bcrypt.hash(password,salt);
         const user = await User.create({name:name,role:role,email,password:hashedPass})
-        const comp = await Company.findOne({name:company})
-        if(comp){
-            await Company.findOneAndUpdate({name:company},{$inc :{numEmployees:1}})
-        }
+        // const comp = await Company.findOne({name:company})
+        // if(comp){
+        //     await Company.findOneAndUpdate({name:company},{$inc :{numEmployees:1}})
+        // }
         // res.status(200).json(user);
         const data= {user:
             {id:user.id}
