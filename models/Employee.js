@@ -20,8 +20,7 @@ const employeeSchema = new mongoose.Schema({
         default:'Fresher'
     },
     company:{
-        type:String,
-        required:true
+        type:String
     },
     skills:[{
         type:String,
