@@ -6,7 +6,7 @@ function Join() {
   const hmsActions = useHMSActions();
   const [inputValues, setInputValues] = useState({
     name: "",
-    token: ""
+    token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhY2Nlc3Nfa2V5IjoiNjQwYzJmN2Y1Mzc2OWVjZDFkYTI2MDlmIiwicm9vbV9pZCI6IjY0MGMzNTM0Nzk1ZWFhZDNlYjY3MmRhMyIsInVzZXJfaWQiOiJzdWdzeWhtcCIsInJvbGUiOiJlbXBsb3llZSIsImp0aSI6ImNlMTRkZjNhLTEyOGQtNDRlYy1hNzYwLTM3ZDZmZDA4ZWQ3ZSIsInR5cGUiOiJhcHAiLCJ2ZXJzaW9uIjoyLCJleHAiOjE2Nzg2ODI2NzR9.FH3kE1PPquwO2IN8W361MEC5WqIQpu4l6U7OI-WUhOA"
   });
 
   const handleInputChange = (e) => {
@@ -38,7 +38,7 @@ function Join() {
           placeholder="Your name"
         />
       </div>
-      <div className="input-container">
+      {/* <div className="input-container">
         <input
           required
           value={inputValues.token}
@@ -48,7 +48,7 @@ function Join() {
           name="token"
           placeholder="Auth token"
         />
-      </div>
+      </div> */}
       <button className="btn-primary">Join</button>
     </form>
   );

@@ -11,11 +11,11 @@ import {
   
     return (
       <header>
-        <img
+        {/* <img
           className="logo"
           src="https://www.100ms.live/assets/logo.svg"
           alt="logo"
-        />
+        /> */}
         {isConnected && (
           <button
             id="leave-btn"

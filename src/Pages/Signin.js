@@ -46,13 +46,11 @@ export default function SignIn() {
     try {
       const name = first.current.value
       const email = second.current.value
-      const token = localStorage.getItem("Authtoken")
       console.log(name);
-      const res = await fetch('https://codecrushersloc50-production.up.railway.app/api/user/login',{
+      const res = await fetch('https://codecrushersloc50-production.up.railway.app/api/user/',{
         method:'POST',
         headers:{
-          'Content-Type':'application/json',
-          'Authorization': `Bearer ${token}`   
+          'Content-Type':'application/json'   
         }
         ,body:JSON.stringify({name:name,email:email,password:third.current.value,role:role})
       })

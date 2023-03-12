@@ -12,6 +12,7 @@ import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+import main from '../assets/main.png'
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -55,21 +56,28 @@ export default function Album() {
                         pb: 6,
                     }}
                 >
-                    <Container maxWidth="sm">
-                        <Typography
-                            component="h1"
-                            variant="h2"
-                            align="center"
-                            color="text.primary"
-                            gutterBottom
-                        >
-                            Jobs For You
-                        </Typography>
-                        <Typography variant="h5" align="center" color="text.secondary" paragraph>
-                            Discover your dream career with our extensive job listings from top employers.
-                            Our platform offers personalized job recommendations based on your skills and interests.
-                            Sign up for free to start applying to your perfect job match today.
-                        </Typography>
+                    <Container width='lg'>
+                        <Stack direction='row' style={{alignItems:'center',justifyContent:'space-between'}}>
+                            <Box style={{width:'50%',padding:'50px'}}>
+                                <Typography
+                                    component="h1"
+                                    variant="h2"
+                                    align="center"
+                                    color="text.primary"
+                                    gutterBottom
+                                >
+                                    Jobs For You
+                                </Typography>
+                                <Typography variant="h5" align="center" color="text.secondary" paragraph>
+                                    Discover your dream career with our extensive job listings from top employers.
+                                    Our platform offers personalized job recommendations based on your skills and interests.
+                                    Sign up for free to start applying to your perfect job match today.
+                                </Typography>
+                            </Box>
+                            <Box style={{width:'50%',padding:'50px'}}>
+                                <img src={main} alt="" style={{width:'100%'}} />
+                            </Box>
+                        </Stack>
                         <Stack
                             sx={{ pt: 4 }}
                             direction="row"

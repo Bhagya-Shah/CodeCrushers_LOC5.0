@@ -10,6 +10,8 @@ import {
   useHMSStore
 } from "@100mslive/react-sdk";
 import Footer from "./Footer";
+import { Grid } from "@mui/material";
+import RatingForm from "./RatingForm";
 
 export default function App() {
   const isConnected = useHMSStore(selectIsConnectedToRoom);
@@ -24,15 +26,22 @@ export default function App() {
   }, [hmsActions, isConnected]);
   return (
     <div className="App">
-      <Header />
-      {isConnected ? (
-        <>
-          <Conference />
-          <Footer />
-        </>
-      ) : (
-        <JoinForm />
-      )}
+      <Grid container>
+        <Grid item xs={9}>
+          <Header />
+          {isConnected ? (
+            <>
+              <Conference />
+              <Footer />
+            </>
+          ) : (
+            <JoinForm />
+          )}
+        </Grid>
+        <Grid item xs={3}>
+          <RatingForm />
+        </Grid>
+      </Grid>
     </div>
   );
 }

@@ -1,4 +1,7 @@
 import * as React from 'react';
+import logo from '../assets/logo.png';
+import logo1 from '../assets/logo1.svg'
+import logo2 from '../assets/logo2.png'
 import { Link } from 'react-router-dom'
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -15,7 +18,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 // import SearchIcon from '@mui/icons-material/Search';
 
-const pages = ['Jobs', 'Companies', 'Community', 'SignIn', 'video-call'];
+const pages = ['Jobs', 'Companies', 'EmployeeForm', 'EmployeeJobs', 'SignIn', 'Login', 'Video-Call'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
@@ -41,7 +44,7 @@ function ResponsiveAppBar() {
         <AppBar position="static">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                    <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+                    {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
                     <Typography
                         variant="h6"
                         noWrap
@@ -57,7 +60,7 @@ function ResponsiveAppBar() {
                             textDecoration: 'none',
                         }}
                     >
-                        JobShala
+                        <img src={logo2} alt="JobFusion" style={{height: "80px"}}/>
                     </Typography>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
